@@ -6,13 +6,14 @@ package com.yjz.datastructure.tree;
  * CreateDate: 2018-12-11 8:38 AM
  **/
 public class BinarySearchTree<T extends Comparable<T>> {
-    private Node<T> root;
+
+    private TreeNode<T> root;
 
     /**
      * 构造二叉树
      */
     public BinarySearchTree(T data) {
-        root = new Node<>(null,data,null);
+        root = new TreeNode<>(null,data,null);
     }
 
 
@@ -20,7 +21,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
      * 节点查找
      */
     public boolean searchNode(T data) {
-        Node<T> currentNode = root;
+        TreeNode<T> currentNode = root;
         while(true) {
             //一直搜索到节点为null，都没有找到
             if(currentNode == null) {
@@ -42,8 +43,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
      * 节点添加
      */
     public boolean addNode(T data) {
-        Node<T> currentNode = root;
-        Node<T> parentNode = root;
+        TreeNode<T> currentNode = root;
+        TreeNode<T> parentNode = root;
 
         //查找要插入节点的父节点
         while (currentNode != null) {
@@ -58,7 +59,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
             }
         }
 
-        Node<T> newNode = new Node<>(null,data,null);
+        TreeNode<T> newNode = new TreeNode<>(null,data,null);
 
         if(parentNode != null) {
             if(parentNode.data.compareTo(data) < 0) {
@@ -72,55 +73,95 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return true;
     }
 
-
-
-
     /**
-     * 获取节点个数
+     * 既然删除分为三种情况，那么我们可以把第三种情况转换成前两种情况
+     * @param node
+     * @return
      */
-    public int getSize() {
-        return getNum(root);
-    }
-
-    /**
-     * 递归遍历子树个数
-     */
-    private int getNum(Node<T> node) {
-        if(node == null) {
-            return 0;
-        } else {
-            int leftNum = getNum(node.left);
-            int rightNum = getNum(node.right);
-            return leftNum + rightNum + 1;
+    public boolean deleteNode(TreeNode<T> node) {
+        //将要删除的节点与其后继节点交换
+        if(node.left != null && node.right != null) {
+            //查找右子树的最小值
+            TreeNode<T> minNode = node.right;
+            while (minNode.left != null) {
+                minNode = minNode.left;
+            }
+            //将右子树最小值节点与当前要删除节点交换
+            node.data = minNode.data;
+            //将要删除节点指向最小值节点，这样我们就考虑如何删除最小值节点。
+            //最小值节点要么一个节点(这时候一点事右节点)，要么就是一个叶子节点，这样就转化成删除第一种和第二种节点方案了
+            node = minNode;
         }
-    }
 
-    /**
-     * 获取数的高度
-     */
-    public int getHeigth(){
-        return getHeigth(root);
-    }
-
-    /**
-     * 递归获取节点高度
-     */
-    private int getHeigth(Node<T> node) {
-        if(node == null) {
-            return 0;
+        //找到要删除节点的孩子节点
+        TreeNode<T> childNode;
+        if(node.left != null) {
+            childNode = node.left;
         } else {
-            int leftHeight = getHeigth(node.left);
-            int rightHeight = getHeigth(node.right);
-            return (leftHeight < rightHeight) ? rightHeight + 1 : leftHeight + 1;
+            childNode = node.right;
         }
+
+        //找到要删除节点的父节点
+        TreeNode<T> parentNode = searchParentNode(node);
+
+        //parentNode为空，说明删除的是根节点
+        if(parentNode == null) {
+            root = childNode;
+        } else if(parentNode.left == node) {
+            parentNode.left = childNode;
+        } else {
+            parentNode.right = childNode;
+        }
+        return true;
     }
 
-    private class Node<T extends Comparable<T>>{
-        Node<T> left;
+    /**
+     * 采用中序遍历，找出当前节点的后继节点。分为右子树为不为空
+     */
+    private TreeNode<T> successor(TreeNode<T> node) {
+        TreeNode<T> currentNode = node;
+        //含有右子树
+        if(currentNode.right != null){
+            //一直查找右子树的最小值
+            while (currentNode.left != null) {
+                currentNode = currentNode.left;
+            }
+            return currentNode;
+        }
+        //不含有右子树，则后继节点为
+    }
+
+
+    /**
+     * 查找父节点
+     */
+    private TreeNode<T> searchParentNode(TreeNode<T> node) {
+        TreeNode<T> currentNode = root;
+        TreeNode<T> parentNode = null;
+        while (currentNode != null) {
+            parentNode = currentNode;
+            int cmp = currentNode.data.compareTo(node.data);
+            if(cmp < 0) {
+                currentNode = currentNode.right;
+            } else if(cmp > 0){
+                currentNode = currentNode.left;
+            } else {
+                //找到该节点
+                break;
+            }
+        }
+        return parentNode;
+    }
+
+
+
+
+    private class TreeNode<T extends Comparable<T>>{
+        TreeNode<T> left;
         T data;
-        Node <T> right;
+        TreeNode <T> right;
 
-        public Node(Node<T> left,T data,Node<T> right) {
+        public TreeNode(TreeNode<T> left,T data,TreeNode<T> right) {
             this.left = left;
             this.data = data;
             this.right = right;
