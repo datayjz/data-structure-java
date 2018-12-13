@@ -43,19 +43,19 @@ n个互斥的树可以构成森林，比如去除根节点的树，就是一个�
 满二叉树：
 除最后一层没有任何子节点外，每一层的几点都有两个节点的二叉树，称为满二叉树。满二叉树的高度为h，则节点个数为2^h-1。
 
-![6b6eef35f2d986ca8f951ef2fc79f208.png](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENResource/p161)
+![6b6eef35f2d986ca8f951ef2fc79f208.png](img/full-binary-tree.png)
 
 完全二叉树：
 完全二叉树是从满二叉树而引出来的。如果二叉树的深度为h，则从1~h-1的所有节点度数都为2，第h层的所有节点都集中在最左边，则成为完全二叉树。或者可以这样理解，高度为h，节点个数小于2^h-1，但是节点编号方式和满二叉树一样，从左到右，从上到下的顺序一一对应。
 
-![00aa8d26cd887d9bbb99ab08be151edc.jpeg](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENResource/p162)
+![00aa8d26cd887d9bbb99ab08be151edc.jpeg](img/perfect-binary-tree.png)
 
 可以看出，满二叉树是完全二叉树的一种。
 
 斜二叉树：
 当一个二叉树完全没有左节点或没有右节点，我们就把它成为左斜树或右斜树。
 
-![6b7cdd0882c102df4a5fd7da5d7e2da7.png](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENResource/p163)
+![6b7cdd0882c102df4a5fd7da5d7e2da7.png](img/slope-binary-tree.png)
 
 严格二叉树：
 二叉树中的所有非叶子节点均有非空的左右子树，称为严格二叉树。
@@ -76,7 +76,7 @@ n个互斥的树可以构成森林，比如去除根节点的树，就是一个�
 ## 二叉树遍历
 二叉树遍历(Binary Threee Traversal)，就是访问树中所有节点各一次，并且将最终结果转化为线性关系。二叉树一般有两种遍历方式：
 
-![ef15de49824593289ae79910e46a0e3f.svg+xml](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENResource/p164)
+![ef15de49824593289ae79910e46a0e3f.svg+xml](img/expression-tree.svg)
 
 * 前序遍历：根->左子树->右子树，ABC。
 * 中序遍历：左子树->根->右子树，BAC。
@@ -89,7 +89,7 @@ n个互斥的树可以构成森林，比如去除根节点的树，就是一个�
 
 下面根据下图这颗树来讲解三种遍历方式：
 
-![0f4f1a5b37fbaee054fd8230d7a2acbd.png](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENResource/p165)
+![0f4f1a5b37fbaee054fd8230d7a2acbd.png](img/traverse-tree.png)
 
 
 #### 中序遍历
@@ -134,7 +134,7 @@ n个互斥的树可以构成森林，比如去除根节点的树，就是一个�
  比如：
  A - B*(-C + -3.5)使用二叉运算树表示：
  
- ![7717a82941f051e664386d30365d811b.svg](evernotecid://5D1145D1-B41C-46C6-99FF-7D09BD1763AD/appyinxiangcom/14192680/ENNote/p139?hash=7717a82941f051e664386d30365d811b)
+ ![7717a82941f051e664386d30365d811b.svg](img/expression-tree.svg)
  
  ## 二叉线索树
  二叉线索树是一种充分利用树空指针的一个数据结构。正常二叉树2n的指针只会用到n-1个指针，而n+1指针是空闲的。二叉线索树就是将这些空指针指向树的其它节点，这些链接称为线索。
