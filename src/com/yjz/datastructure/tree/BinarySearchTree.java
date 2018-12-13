@@ -115,22 +115,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return true;
     }
 
-    /**
-     * 采用中序遍历，找出当前节点的后继节点。分为右子树为不为空
-     */
-    private TreeNode<T> successor(TreeNode<T> node) {
-        TreeNode<T> currentNode = node;
-        //含有右子树
-        if(currentNode.right != null){
-            //一直查找右子树的最小值
-            while (currentNode.left != null) {
-                currentNode = currentNode.left;
-            }
-            return currentNode;
-        }
-        //不含有右子树，则后继节点为
-    }
-
 
     /**
      * 查找父节点
