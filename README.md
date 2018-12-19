@@ -224,7 +224,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ![58dcfaec30fa91c943d7bc21235e85a0.png](img/bubble-sort.png)
 
-算法实现可查看：BubbleSort.java
+算法实现可查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/BubbleSort.java
 
 算法分析：
 
@@ -246,7 +246,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 ![957b17efa1d547f584c76ff42cd84289.png](img/quick-sort.png)
 
 
-算法实现可查看：QuickSort.java
+算法实现可查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/QuickSort.java
 
 算法分析：
 
@@ -270,7 +270,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ![bd4cf3e3d9d732311222c754d9bf510d.png](img/insert-sort.png)
 
-算法实现可查看：InsertSort.java
+算法实现可查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/InsertSort.java
 
 算法分析：
 
@@ -292,7 +292,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ![c26432a1deabb571c9e3f5adadebca2f.png](img/sheel-sort.png)
 
-算法实现可查看：ShellSort.java
+算法实现可查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/SheelSort.java
 
 算法分析：
 
@@ -317,7 +317,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ![80d4bc83dd4c98b70a7ae03c3520c1fa.png](img/select-sort.png)
 
-算法实现可以查看：Selectsort.java
+算法实现可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/SelectSort.java
 
 算法分析：
 
@@ -343,7 +343,7 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ![7f2d6e1b9b8462eac3372024384fce96.png](img/heap-sort.png)
 
-算法实现可参考：HeapSort.java
+算法实现可参考：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/sort/HeapSort.java
 
 算法分析：
 
