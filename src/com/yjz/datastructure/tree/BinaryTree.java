@@ -14,7 +14,6 @@ public class BinaryTree<T> {
         this .root = root;
     }
 
-
     /**
      * 获取节点个数
      */

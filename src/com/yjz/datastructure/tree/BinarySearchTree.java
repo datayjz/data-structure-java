@@ -16,17 +16,29 @@ public class BinarySearchTree<T extends Comparable<T>> {
         root = new TreeNode<>(null,data,null);
     }
 
+    /**
+     * 递归查找
+     */
+    public boolean searchNodeByRecursive(TreeNode<T> currentNode,T data) {
+        if(currentNode == null)
+            return false;
+        int tmp = currentNode.data.compareTo(data);
+        if(tmp < 0) {
+            return searchNodeByRecursive(currentNode.right,data);
+        }else if (tmp > 0) {
+            return searchNodeByRecursive(currentNode.left,data);
+        } else {
+            return true;
+        }
+    }
 
     /**
      * 节点查找
      */
     public boolean searchNode(T data) {
         TreeNode<T> currentNode = root;
-        while(true) {
-            //一直搜索到节点为null，都没有找到
-            if(currentNode == null) {
-                return false;
-            }
+        //一直搜索到节点为null，都没有找到
+        while(currentNode == null) {
             int tmp = currentNode.data.compareTo(data);
 
             if (tmp < 0) {
@@ -37,6 +49,18 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 return true;
             }
         }
+        return false;
+    }
+
+    public T findMinData(TreeNode<T> currentNode) {
+        if(currentNode == null) {
+            return null;
+        }
+        //一直往左遍历
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.data;
     }
 
     /**
