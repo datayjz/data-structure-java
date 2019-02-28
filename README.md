@@ -259,7 +259,7 @@ n个互斥的树可以构成森林，比如去除根节点的树，就是一个�
 如果使用数组存储二叉树，则需要把二叉树想象成满二叉树，第k层有2^k-1个节点。然后从根节点开始，从左到右、从上到下，依次存储。如果节点为空则存储也为空，这样可以得出：
 
 * 左子树的索引值是父节点索引值的2\*n。
-* 右子树的索引值是父节点索引值的n\*n+1。
+* 右子树的索引值是父节点索引值的2\*n+1。
 
 ### 链表存储
 采用链表来存储二叉树的好处在于增加和删除节点相当容易，缺点在于很难找到父节点。除非在每个节点增加一个存储父节点索引的字段。
@@ -315,7 +315,8 @@ public class BinaryTreeNode{
 4. 当左子树为空时，开始将子树根节点弹栈。
 5. 开始遍历当前根节点的右子树。
 
-代码实现：可以查看：BinaryTreeOrder.preOrderNonRecursive方法。
+前序遍历完整实现可以查看：![BinaryTreeOrder.preOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
+
 
 #### 中序遍历
 中序遍历的顺序是“左中右”，也就是左子树都访问完成后，访问根节点，然后访问右子树。
@@ -328,7 +329,7 @@ public class BinaryTreeNode{
 3. 当左子树为空时，弹出根节点执行相应操作。
 4. 最后在遍历右子树，直到其为空或栈为空。
 
-代码实现：可以查看：BinaryTreeOrder.inOrderNonRecursive方法实现。
+中序遍历完整实现可以查看：![BinaryTreeOrder.inOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
 
 
 ### 后序遍历
@@ -339,16 +340,17 @@ public class BinaryTreeNode{
 对于前中序遍历，当访问完节点后就不需要使用了。而对于后序遍历，每个节点要访问两次，因为在遍历完左节点后需要访问根节点，找到对应的右节点，而遍历完右节点后，才是真正访问该节点。
 解决这个问题可以通过判断当前出栈节点的右节点是否和当前节点一样，如果一样则说明右子树访问完了，这次可以直接出栈使用了。
 
-代码实现：可以查看 postOrderNonRecursive
+后序遍历完整实现可以查看：![BinaryTreeOrder.postOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
+ 
 
 ### 层序遍历
 层序遍历可以借助队列来完成，当访问当前节点时将当前节点的左右子树入队，以次循环遍历。
 
-代码实现：可以查看levelOrder
+层序遍历完整实现可以查看：![BinaryTreeOrder.levelOrder](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java) 
 
 ## 二叉树应用实例
 二叉树中大部分应用都可以借助树的遍历完成，一般有两种解决方案：递归和非递归。
-比如使用递归和非递归实现查找二叉树中最大元素，可以查看BinaryTreeOrder.findMax 实现。
+比如使用递归和非递归实现查找二叉树中最大元素，可以查看 ![BinaryTreeOrder.findMax](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)实现。
 
 ## 二叉查找树
 二叉查找树又称二叉排序树、二叉搜索树。二叉搜索树是指所有左子树的节点都小于树根的值，所有右子树的节点都大于根节点的值。
@@ -367,7 +369,7 @@ public class BinaryTreeNode{
 ![0f4f1a5b37fbaee054fd8230d7a2acbd.png](img/binary_search_tree.png)
 
 
-二叉查找树的实现可以查看：
+二叉查找树的完整实现可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinarySearchTree.java
 
 > 二叉搜索树在为斜树的时候，时间复杂度为O(n)。为了针对这种情况，可以将其转换为平衡二叉搜索树，平衡二叉搜索树的左右子树高度差为0(HB(0)表示，0为平衡因子)。
 
