@@ -175,11 +175,9 @@ Java的LinkedList就是一个双向链表。
 比如：二叉树遍历、CPU中断处理、图的深度优先搜索、递归、算术表达式转换和求和、调用子程序等。
 
 ## 堆栈实现
-堆栈有两种实现方式：使用顺序表实现堆栈和使用链表实现堆栈。顺序表实现堆栈可以使用数组简单实现，但是顺序表实现堆栈需要事先声明大小，不太灵活。使用链表实现堆栈最大的优点就是可以动态改变链表的长度，能有效利用内存资源。
-
-数组实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/SequenceStack.java
-
-链表实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/LinkedStack.java
+* 堆栈有两种实现方式：使用顺序表实现堆栈和使用链表实现堆栈。顺序表实现堆栈可以使用数组简单实现，但是顺序表实现堆栈需要事先声明大小，不太灵活。使用链表实现堆栈最大的优点就是可以动态改变链表的长度，能有效利用内存资源。
+* 数组实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/SequenceStack.java
+* 链表实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/LinkedStack.java
 
 # 队列
 队列是一种先进先出(First In First Out,FIFO)的数据结构，和堆栈一样是一种线性表的抽象数据结构类型(ADT)。
@@ -190,11 +188,9 @@ Java的LinkedList就是一个双向链表。
 
 队列基本操作：创建队列、队尾添加元素、队头取出元素、返回队列前端值，队列是否为空。
 
-数组实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/ArrayQueue.java
-
-数组实现循环队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LoopArrayQueue.java
-
-链表实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LinkedQueue.java
+* 数组实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/ArrayQueue.java
+* 数组实现循环队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LoopArrayQueue.java
+* 链表实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LinkedQueue.java
 
 
 # 树
