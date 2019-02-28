@@ -315,7 +315,7 @@ public class BinaryTreeNode{
 4. 当左子树为空时，开始将子树根节点弹栈。
 5. 开始遍历当前根节点的右子树。
 
-前序遍历完整实现可以查看：![BinaryTreeOrder.preOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
+前序遍历完整实现可以查看：[BinaryTreeOrder.preOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
 
 
 #### 中序遍历
@@ -329,7 +329,7 @@ public class BinaryTreeNode{
 3. 当左子树为空时，弹出根节点执行相应操作。
 4. 最后在遍历右子树，直到其为空或栈为空。
 
-中序遍历完整实现可以查看：![BinaryTreeOrder.inOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
+中序遍历完整实现可以查看：[BinaryTreeOrder.inOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
 
 
 ### 后序遍历
@@ -340,17 +340,17 @@ public class BinaryTreeNode{
 对于前中序遍历，当访问完节点后就不需要使用了。而对于后序遍历，每个节点要访问两次，因为在遍历完左节点后需要访问根节点，找到对应的右节点，而遍历完右节点后，才是真正访问该节点。
 解决这个问题可以通过判断当前出栈节点的右节点是否和当前节点一样，如果一样则说明右子树访问完了，这次可以直接出栈使用了。
 
-后序遍历完整实现可以查看：![BinaryTreeOrder.postOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
+后序遍历完整实现可以查看：[BinaryTreeOrder.postOrderNonRecursive](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)
  
 
 ### 层序遍历
 层序遍历可以借助队列来完成，当访问当前节点时将当前节点的左右子树入队，以次循环遍历。
 
-层序遍历完整实现可以查看：![BinaryTreeOrder.levelOrder](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java) 
+层序遍历完整实现可以查看：[BinaryTreeOrder.levelOrder](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java) 
 
 ## 二叉树应用实例
 二叉树中大部分应用都可以借助树的遍历完成，一般有两种解决方案：递归和非递归。
-比如使用递归和非递归实现查找二叉树中最大元素，可以查看 ![BinaryTreeOrder.findMax](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)实现。
+比如使用递归和非递归实现查找二叉树中最大元素，可以查看 [BinaryTreeOrder.findMax](https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/tree/BinaryTreeOrder.java)实现。
 
 ## 二叉查找树
 二叉查找树又称二叉排序树、二叉搜索树。二叉搜索树是指所有左子树的节点都小于树根的值，所有右子树的节点都大于根节点的值。
