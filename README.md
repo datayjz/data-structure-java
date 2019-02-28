@@ -98,6 +98,8 @@ int arrayIsSort(int[] array,int index) {
     return array[index-1] > array[index] ? 0 : arrayIsSort(array,index-1); 
 }
 ```
+关于递归完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/recursion/RecursionDemo.java
+
 
 ## 回溯法
 TODO
@@ -121,7 +123,7 @@ TODO
 数组在不同语言的存储方式可以分为为：以行为主存储和以列为主存储。
 
 具体实现可以查看：
-com.yjz.datastructure.linearlis
+顺序表数组实现完整代码：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/linearlist/ArrayList.java
 
 ## 链表
 链表是线性表采用动态存储结构的数据结构，链表的特性是各个数据项在计算机内存中是不连续且随机的存放的，优点就是加入和删除数据不需要移动大量的数据，并且当单个数据被删除后能够将内存空间释放。
@@ -133,7 +135,7 @@ com.yjz.datastructure.linearlis
 
 ![f69755e213b5430a5ee6337b27518dbe.svg+xml](img/single-link-list.png)
 
-单链表实现：可以查看:com.yjz.datastructure.linearlist;
+单链表实现完整代码：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/linearlist/SingleLinkedList.java
 
 通过创建内部类来创建链表节点数据结构，优点是可以和外部类进行私有操作的互相访问。
 
@@ -149,7 +151,7 @@ while(tmpNode.next != head){
     tmpNode = tmpNode.next;
 }
 ```
-具体实现可以查看：com.yjz.datastructure.linearlist
+循环链表具体实现可查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/linearlist/LoopLinkedList.java
 
 ### 双向链表
 单向链表只能够进行单向遍历，如果其中一个节点断开，就会导致后续链表数据丢失。而双向链表是每个节点都有两个指针，分别指向该节点的前驱和后继。双向链表可以是循环双向链表也可以不是，如果尾节点的后继指针指向头节点，而头节点的前驱指针指向尾节点就会形成一个双向循环链表。
@@ -158,7 +160,7 @@ while(tmpNode.next != head){
 
 Java的LinkedList就是一个双向链表。
 
-双向链表实现可以查看：
+双向链表具体实现可以查看:https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/linearlist/DoubleLinkedList.java
 
 # 堆栈
 堆栈(Stack)是一组具有相同类型数据的集合，具有后进先出的特性，所有操作均在顶端进行。
@@ -175,7 +177,8 @@ Java的LinkedList就是一个双向链表。
 ## 堆栈实现
 堆栈有两种实现方式：使用顺序表实现堆栈和使用链表实现堆栈。顺序表实现堆栈可以使用数组简单实现，但是顺序表实现堆栈需要事先声明大小，不太灵活。使用链表实现堆栈最大的优点就是可以动态改变链表的长度，能有效利用内存资源。
 
-顺序表实现堆栈可以查看：
+数组实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/SequenceStack.java
+链表实现堆栈完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/stack/LinkedStack.java
 
 # 队列
 队列是一种先进先出(First In First Out,FIFO)的数据结构，和堆栈一样是一种线性表的抽象数据结构类型(ADT)。
@@ -186,7 +189,9 @@ Java的LinkedList就是一个双向链表。
 
 队列基本操作：创建队列、队尾添加元素、队头取出元素、返回队列前端值，队列是否为空。
 
-列表可以实现
+数组实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/ArrayQueue.java
+数组实现循环队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LoopArrayQueue.java
+链表实现队列完整代码可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/queue/LinkedQueue.java
 
 
 # 树
