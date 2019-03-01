@@ -30,11 +30,11 @@ public class HeapSort {
 
             int j = i;
             //存在子节点(至少存在左节点)
-            while ((j * 2 + 1) < lastIndex){
+            while ((j * 2 + 1) <= lastIndex){
                 //maxIndex代表左右孩子节点的最大值的下标
                 int maxIndex = 2 * j + 1;
                 //左节点小于最后一个节点，说明存在右节点
-                if(maxIndex < lastIndex) {
+                if(maxIndex  < lastIndex) {
                     if(array[maxIndex] < array[maxIndex + 1]) {
                         maxIndex = maxIndex+1;
                     }
@@ -58,7 +58,7 @@ public class HeapSort {
         for(int i = (lastIndex-1)/2 ;i >= 0;i-- ) {
             int j = i;
             //有孩子节点
-            while ((j * 2 + 1) < lastIndex) {
+            while ((j * 2 + 1) <= lastIndex) {
                 //存储左右孩子节点中的最小值
                 int minIndex = j * 2 + 1;
                 if(minIndex < lastIndex) {
@@ -87,7 +87,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {8, 1, 3, 5, 7, 11, 4, 6, 10};
+        int[] array = {2,6,1,5,2,4,3,10};
 
         HeapSort.heapSort(array);
         for (int i = 0; i < array.length; i++) {

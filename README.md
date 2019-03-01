@@ -694,3 +694,61 @@ E = {(v1,v2),(v1,v3),(v1,v4),(v2,v5),(v3,v4),(v3,v5),(v3,v6),(v4,v6),(v5,v6)}
 
 ### 基数排序
 TODO
+
+# 查找
+查找又称搜索，就是从一个集合中寻找具有某个特定属性的过程。被查找的数据可能存储在数据库中、内存数组中、文件文本中、树、图或其它搜索空间中。
+搜索是计算机科学的核心，因为如今计算机中存储了大量的信息，如何有效快速的获取这些信息，需要非常高效的查找算法。通常数据的组织形式，能够提高查找的效率。比如对有序序列，使用二分查找。
+
+查找一般分为：
+* 无序线性查找。
+* 有序线性查找。
+* 二分查找。
+* 符号表和散列。
+* 字符串查找法：键树、三叉搜索树和后缀树。
+
+无序线性查找是最低效的查找方法，因为序列无序，想要查找特定元素，只能扫描整个数组才能判断元素是否存在数组中。
+```
+int findUnSortedLinerSearch(int[] array,int data) {
+    int length = array.length;
+    for(int i = 0; i < lenght; i++) {
+        if(array[i] == data)
+            return i;
+    }
+    return -1;
+}
+```
+
+有序线性查找一般不需要扫描全表。比如一个升序的序列，当遍历到一个元素已经大于待查找值时，就不需要查找了，因为后续序列肯定都不满足(都大于待查找值)。
+```
+int findSortedLinerSearch(int[] array,int data) {
+    int length = array.length;
+    for(int i = 0; i < length; i++) {
+        if(data == length)
+            return i;
+        else if(data[i] > data)
+            return -1;
+    }
+    return -1;
+}
+
+```
+二分查也称为折半查找，它是一种高效率的查找方式。二分查找的前提条件是，待查找序列必须有序。
+
+```
+int binarySearch(int[] array,int data) {
+    int low = 0;
+    int high = array.length - 1;
+    while(low <= high) {
+        int mid = (high - low) / 2;
+        if(array[mid] < data) {
+            low = mid+1;
+        } else if(array[mid] > data) {
+            high = mid - 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+}
+```
+关于二分查找完整实例可以查看：https://github.com/datayjz/data-structure-java/blob/master/src/com/yjz/datastructure/search/BinarySearch.java
